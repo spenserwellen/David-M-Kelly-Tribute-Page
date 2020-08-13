@@ -1,0 +1,736 @@
+/*-------------------------------
+Purpose: Main CSS File
+Version: 0.1
+Author: Spenser Wellen
+Date: 06/05/2020
+Last Update: 06/25/2020
+-------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;515;600;700&display=swap');
+
+/*
+Darker Aubergine: #201C1d
+Ligher Aubergine: #2d2a2b
+Mortar: #524F50
+Gainsboro: #dCdCdC
+Ideo Yellow: #f8f150
+White: #ffffff
+Black: #000000
+*/
+
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Comfortaa','Arial', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #f8f150;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ----------------------------------------------- */
+
+.container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section {
+  padding: 80px 5%;
+}
+.box {
+  padding: 1%;
+}
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+  width: 50%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+  font-weight: 100;
+}
+/* ----- HEADINGS ----- */
+h1 {
+  position: relative;
+  top: 35px;
+  margin: 0px;
+  font-size: 150%;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  color: #ffffff;
+}
+
+h2,
+h3 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  color: #000000;
+}
+
+h2 {
+  text-align: center;
+}
+
+h2::after {
+  content: " ";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 300px;
+  height: 3px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+/* ----- COLORS ----- */
+.red-style-color {
+  color: hsl(204deg, 12%, 50%);
+}
+.white-style-color {
+  color: #ffffff;
+}
+
+.gray-style-color {
+  color: rgba(131, 142, 150, 1);
+}
+
+/* ----- IMAGES ----- */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----- LINKS ----- */
+a {
+  text-color: #ffffff;
+}
+a:link,
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 500ms;
+}
+a:active,
+a:hover {
+  color: #f8f150;
+  transition: 0.4s
+  background-position: -100% 100%;
+}
+
+.long-copy a {
+  color: black;
+  text-decoration: underline;
+  background-image: linear-gradient(to right, transparent 50%, #f8f150 50%);
+  background-origin: 0;
+  background-size: 200% 45%;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  transition: background-position 0.6s;
+}
+
+.long-copy a:hover {
+  background-position: -100% 100%;
+}
+/* ----- BUTTONS ----- */
+.red-btn {
+  display: block;
+  margin-top: 15px;
+  padding: 5px;
+  border: 1.4px solid hsl(204deg, 12%, 50%);
+  background-color: hsl(204deg, 12%, 50%);
+  border-radius: 1.5px;
+  font-weight: 570;
+  text-transform: uppercase;
+  font-size: 85%;
+}
+
+.red-btn:hover { 
+  color: hsl(204deg, 12%, 50%); 
+  background-color: #ffffff;
+  transition: 0.25s;
+} 
+
+/* ----- ICONS ----- */
+.icon-big {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 350%;
+  color: #000000;
+}
+
+/* ----------------------------------------------- */
+/* HEADER */
+/* ----------------------------------------------- */
+
+header {
+  background-image: linear-gradient(rgba(32, 28, 29, 0.77), rgb(32, 28, 29)),
+    url("https://i.imgur.com/8RjLbDo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 110vh;
+}
+
+.hero-text-box {
+  height: 90vh;
+  position: relative;
+  margin: 0 auto;
+}
+
+.hero-text-qoute {
+  font-size: 250%;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+  user-select: none;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* ----- BUTTONS ----- */
+.hero-btn:link,
+.hero-btn:visited {
+    position: absolute;
+    bottom: 10%;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: transparent;
+    color: #9caab5;
+    border: 2px solid #9caab5;
+    border-radius: 50%;
+    outline: none;
+    transition: border 500ms, color 500ms;
+    cursor: pointer;
+}
+
+.hero-btn:active,
+.hero-btn:hover {
+    outline: none;
+    border: 2px solid rgba(156, 170, 181, 0.5);
+    color: rgba(156, 170, 181, 0.5);
+}
+
+.hero-btn::after {
+    display: block;
+    content: "Discover";
+    margin: 8px -23px;
+    color: #9caab5;
+    font-size: 90%;
+    font-weight: 100;
+    transition: color 500ms;
+}
+
+.hero-btn:hover::after { color: rgba(156, 170, 181, 0.5); }
+
+.main-nav li {
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  text-transform: uppercase;
+  font-size: 85%;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 500ms, border-bottom 500ms;
+}
+
+.main-nav li a:active,
+.main-nav li a:hover { border-bottom: 1.6px solid rgba(247, 242, 111, 0.65); }
+
+/* ----- Mobile Navivation ----- */
+.responsive-nav {
+  text-color: #ffffff;
+  position: relative;
+}
+
+.responsive-btn {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+.mobile-nav-icon {
+  display: none;
+  align-self: flex-start;
+  font-size: 200%;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------- */
+/* FEATURES */
+/* ----------------------------------------------- */
+
+.container-features {
+  width: 15em;
+}
+
+/* ----------------------------------------------- */
+/* QOUTE */
+/* ----------------------------------------------- */
+
+.section-qoute p {
+  position: relative;
+  align-self: center;
+  width: 50%;
+  margin-left: 3%;
+  font-size: 150%;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-qoute p::before {
+  display: block;
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  color: #524f50;
+  font-size: 500%;
+}
+
+.section-qoute p::after {
+  position: absolute;
+  bottom: -10px;
+  right: -5px;
+  content: "\201C";
+  font-size: 500%;
+  font-size: 500%;
+  color: #524f50;
+  transform: rotate(180deg);
+}
+
+.section-qoute figure img {
+  border-radius: 50%;
+  border-style: inset;
+  border-width: 4px; 
+}
+/* ----------------------------------------------- */
+/* COMPANIES */
+/* ----------------------------------------------- */
+
+.company-box {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.company-box:last-child {
+  margin-bottom: 0px;
+}
+
+.company-description-box {
+  background-color: #524f5;
+}
+
+.description-text-box {
+  position: relative;
+  width: 40%;
+  margin: 0 auto;
+  padding: 45px;
+  background-color: #ffffff;
+}
+
+.description-text-box p {
+  margin: 10px 0;
+}
+
+.company-image-box {
+  position: absolute;
+  left: -17em;
+  top: -25px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); 
+}
+
+.company-image-box img {
+  border-radius: 5px;
+}
+
+.img-query {
+  display: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ----------------------------------------------- */
+/* GALLERY */
+/* ----------------------------------------------- */
+
+.container-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-showcase {
+  width: 100%;
+  list-style-type: none;
+}
+
+.gallery-showcase li {
+  display: block;
+  width: 25%;
+  margin-right: 15px;
+}
+
+.gallery-photo {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: 5px;
+  background-color: #000;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.gallery-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transform: scale(1.15);
+  transition: opacity 500ms, transform 500ms;
+  opacity: 0.7;
+}
+
+.gallery-photo img:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* ----------------------------------------------- */
+/* FOOTER */
+/* ----------------------------------------------- */
+
+footer {
+  position: relative;
+  padding: 200px 0;
+  font-size: 80%;
+  background: linear-gradient(180deg, rgba(32, 28, 29, 0.4), rgba(32, 28, 29, 0.5)), url("https://i.imgur.com/GpMgLF4.jpg");
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  opacity: 0.94;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: 70%;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: all;
+}
+
+.footer-nav {
+  list-style-type: none;
+}
+
+.footer-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child {
+  margin-right: 0;
+}
+
+.footer-logo {
+  margin: 0px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 150%;
+  font-weight: 700;
+  user-select: none;
+}
+
+/* ----- BUTTONS ----- */
+.footer-btn:link,
+.footer-btn:visited {
+  display: block;
+  position: relative;
+  bottom: 55px;
+  padding-top: 10px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.footer-btn:active,
+.footer-btn:hover {
+  outline: none;
+  color: rgba(248, 241, 80, 0.75);
+  border: 2px solid rgba(248, 241, 80, 0.75);
+  transition: 0.5s;
+}
+
+.footer-btn::after {
+  display: block;
+  content: "JUMP UP";
+  margin: 15px -23px;
+  color: #ffffff;
+  font-size: 90%;
+  font-weight: 100;
+  transition: color 0.5s;
+}
+
+.footer-btn:hover::after {
+  color: rgba(248, 241, 80, 0.75);
+  transition: 0.5s;
+}
+
+/* ----- Media Queries ----- */
+/* Big tablet to 1200px (width smaller than the 1140px row) */
+@media only screen and (max-width: 1700px) {
+  .description-text-box {
+    width: 50%;
+  }
+}
+
+/* Big tablet to 1200px (width smaller than the 1140px row) */
+@media only screen and (max-width: 1212px) {
+  .hero-text-qoute {
+    width: 100%;
+    padding: 0 2%;
+  }
+
+  .long-copy {
+    width: 80%;
+  }
+
+  .description-text-box {
+    width: 80%;
+  }
+
+  .company-image-box {
+    display: none;
+  }
+
+  .img-query {
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+  }
+}
+
+/* Small tablet to big tablet: from 768 to 1023px */
+@media only screen and (max-width: 1023px) {
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .container-row {
+    padding: 0px 4%;
+  }
+}
+
+/* Small phones to small tablets: from 418 to 767px */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  .container-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 4%;
+  }
+
+  .section-qoute {
+    padding: 40px 0;
+  }
+
+  .section-qoute figure img {
+    position: relative;
+    bottom: 25px;
+  }
+
+  .hero-text-box p {
+    padding: 0 4%;
+  }
+
+  .description-text-box,
+  .section-qoute p {
+    width: 100%;
+  }
+
+  img[src="resources/img/qoute-image.jpeg"] {
+    display: block;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  figure {
+    align-self: center;
+  }
+
+  .company-box {
+    margin-bottom: 25px;
+  }
+
+  .hero-text-qoute {
+    font-size: 180%;
+  }
+  h2 {
+    font-size: 150%;
+  }
+
+  .main-nav li {
+    display: block;
+    margin: 20px 20px;
+    font-size: 120%;
+  }
+
+  .main-nav {
+    display: none;
+    z-index: 1000;
+  }
+
+  h1 {
+    height: 0;
+    top: 10px;
+  }
+
+  .mobile-nav-icon {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  .responsive-nav {
+    width: 100%;
+    height: auto;
+  }
+
+  .responsive-nav:hover .main-nav {
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  .responsive-nav {
+    position: fixed;
+    top: 0;
+    background-color: rgba(32, 28, 29, 0.9);
+    box-shadow: 0 -1px 5px 1px #2d2a2b;
+    z-index: 1000;
+  }
+
+  .responsive-nav:hover .mobile-nav-icon {
+    display: none;
+  }
+
+  .responsive-nav:hover h1 {
+    display: none;
+  }
+
+  .responsive-nav:hover {
+    height: 150px;
+    z-index: 1000;
+  }
+
+  .gallery-showcase li {
+    display: block;
+    width: 30%;
+    margin-right: 1%;
+  }
+}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 25px 0;
+  }
+
+  .long-copy {
+    width: 100%;
+    padding: 0 3%;
+  }
+
+  .description-text-box {
+    width: 100%;
+    padding: 5%;
+  }
+
+  .footer-nav li {
+    width: 100%;
+    margin: 2px auto;
+    display: block;
+  }
+  .gallery-showcase li {
+    margin-right: 5px;
+  }
+
+  .main-nav li {
+    display: block;
+    margin: 20px 20px;
+  }
+
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    font-size: 95%;
+  }
+
+  .hero-btn:visited {
+    position: absolute;
+    bottom: 20%;
+  }
+}
